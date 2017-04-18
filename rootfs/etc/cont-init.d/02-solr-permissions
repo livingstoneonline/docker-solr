@@ -1,0 +1,10 @@
+#!/usr/bin/execlineb -P
+# -*- mode: sh -*-
+# vi: set ft=sh:
+with-contenv
+multisubstitute
+{
+  import -i CATALINA_HOME
+  import -i SOLR_HOME
+}
+chown -R tomcat:tomcat ${CATALINA_HOME} ${SOLR_HOME}

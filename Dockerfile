@@ -22,8 +22,6 @@ RUN curl -L http://archive.apache.org/dist/lucene/solr/${SOLR_VERSION}/solr-${SO
     cp -a /tmp/solr-${SOLR_VERSION}/example/solr/*  ${SOLR_HOME}/ && \
     curl -L https://ftp.drupal.org/files/projects/apachesolr-7.x-1.8.tar.gz | \
     tar -xzf - -C /tmp && \
-    cp -r /tmp/apachesolr/solr-conf/solr-4.x/* ${SOLR_HOME}/collection1/conf && \
-    mkdir ${SOLR_HOME}/collection1/data && \
     chown -R tomcat:tomcat ${CATALINA_HOME} ${SOLR_HOME} && \
     rm -rf ${CATALINA_HOME}/webapps/*.war && \
     cleanup

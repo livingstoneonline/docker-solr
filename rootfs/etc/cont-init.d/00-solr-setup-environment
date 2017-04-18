@@ -1,0 +1,13 @@
+#!/usr/bin/execlineb -P
+# -*- mode: sh -*-
+# vi: set ft=sh:
+with-contenv
+multisubstitute
+{
+  import -D "no" SOLR_IMPORT_DATA
+}
+foreground {
+  s6-env -i
+  SOLR_IMPORT_DATA=$SOLR_IMPORT_DATA
+  s6-dumpenv -- /var/run/s6/container_environment
+}

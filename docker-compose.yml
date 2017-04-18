@@ -1,0 +1,11 @@
+version: "2"
+services:
+  solr:
+    build:
+      context: .
+    container_name: solr
+    image: livingstoneonline/solr
+    environment:
+      - TOMCAT_ADMIN_PASSWORD=password
+    ports:
+      - "8080:8080"
